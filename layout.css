@@ -1,0 +1,85 @@
+@media only screen and (max-device-width:700px){
+    body{
+        width:600px;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-device-width:900px){
+    body{
+        width:800px;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-device-width:1300px){
+    body{
+        width:1200px;
+        margin: auto;
+    }
+}
+
+body{
+    background: linear-gradient(#2E2EDA, #12E2E2);
+    height: 100%;
+    width: 100%;
+}
+
+
+#inputs{    
+    width: 250px;
+}
+
+#tabela_conversor{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+}
+
+#nome_pagina{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+    margin-left: 50%;
+}
+
+#tabela_cotacao{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    line-height: 3rem;
+    width: 100%;
+}
+
+.tdSecundario{
+    font-size: 1rem;
+}
+
+.inputCotacoes{
+    border:none;
+    background-color: transparent;
+    font-size:1rem;
+    font-style:italic;
+}
+
+.inputCotacoesVariacaoPositiva{
+    border:none;
+    background-color: transparent;
+    font-size:1rem;
+    font-style:italic;
+    color: green;
+}
+
+.inputCotacoesVariacaoNegativa{
+    border:none;
+    background-color: transparent;
+    font-size:1rem;
+    font-style:italic;
+    color: red;
+}
+
+
+#tituloCotacao{
+    text-align: center;
+    width: 100%;
+}

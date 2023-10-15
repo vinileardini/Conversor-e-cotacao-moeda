@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="layout.css">
+<script type="text/javascript" src="exec.js"></script>
+
+<html>
+    <body>
+        <table id="tabela_conversor"> 
+            <tr>
+                <td id="tituloConversor">
+                    <font>Conversor de moedas</font>
+                </td>
+
+                <tr>
+                    <td colspan="2">
+    
+                        <!--Lista de moedas 1-->
+    
+                        <input  id="inputs" type="number" placeholder="0.00">
+                        <select name="tipoMoeda1" id="tipo_moeda">
+                            <option value=0>Reais (R$)</option>
+                            <option value=1>Dólares (USD)</option>
+                            <option value=2>Euros (EUR)</option>
+                            <option value=3>Peso Argentino (ARS)</option>
+                            <option value=4>Rublo Russo (RUB)</option>
+                            <option value=5>Bitcoin (BTC)</option>
+                            <option value=6>Libra Esterlina (GBP)</option>
+                        </select>
+    
+                        <!--Lista de moedas 2-->
+                        <input id="inputs" type="number" placeholder="0.00">
+                        <select name="tipoMoeda2" id="tipo_moeda">
+                            <option value=0>Reais (R$)</option>
+                            <option value=1>Dólares (USD)</option>
+                            <option value=2>Euros (EUR)</option>
+                            <option value=3>Peso Argentino (ARS)</option>
+                            <option value=4>Rublo Russo (RUB)</option>
+                            <option value=5>Bitcoin (BTC)</option>
+                            <option value=6>Libra Esterlina (GBP)</option>
+                        </select>
+                    </td>
+                </tr>
+            </tr>
+
+            
+
+            
+        </table>
+
+        <br>
+        <br>
+
+        <table id="tabela_cotacao">
+
+            <tr>
+                <td id="tituloCotacao">
+                    <font>Cotação das moedas</font>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <font>Dólar Americano(USD) </font>
+                </td>
+                <tr>
+                    <td class="tdSecundario">
+                        <font>Cotação atual:</font>
+
+                        <input type="text" id="valorDolar" class="inputCotacoes" readonly="true">
+
+                        <font>Máximo:</font>
+
+                        <input type="text" id="maximoDolar" class="inputCotacoes" readonly="true">
+
+                        <font>Mínimo:</font>
+
+                        <input type="text" id="minimoDolar" class="inputCotacoes" readonly="true">
+
+                        <font>Variação:</font>
+
+                        <input type="text" id="variacaoDolar" class="inputCotacoes" readonly="true">
+
+
+                    </td>
+                </tr>
+            </tr>
+                <td>
+                    <font>Euro (EUR)</font>
+                </td>
+
+                <tr>
+                    <td class="tdSecundario">
+
+                        <font>Cotação Atual:</font>
+
+                        <input type="text" id="valorEuro" class="inputCotacoes" readonly="true">
+
+                        <font>Máximo:</font>
+
+                        <input type="text" id="maximoEuro" class="inputCotacoes" readonly="true">
+
+                        <font>Mínimo:</font>
+
+                        <input type="text" id="minimoEuro" class="inputCotacoes" readonly="true">
+
+                        <font>Variação:</font>
+
+                        <input type="text" id="variacaoEuro" class="inputCotacoes" readonly="true">
+
+                    </td>
+                </tr>
+            </tr>
+            <tr>
+                <td>
+                    <font>Peso argentino (ARS)</font>
+                </td>
+
+                <tr>
+                    <td class="tdSecundario">
+                        <font>Cotação atual:</font>
+
+                        <input type="text" id="valorPeso" class="inputCotacoes" readonly="true">
+
+                        <font>Máximo:</font>
+
+                        <input type="text" id="maximoPeso" class="inputCotacoes" readonly="true">
+
+                        <font>Mínimo:</font>
+
+                        <input type="text" id="minimoPeso" class="inputCotacoes" readonly="true">
+
+                        <font>Variação:</font>
+
+                        <input type="text" id="variacaoPeso" class="inputCotacoes" readonly="true">
+
+                    </td>
+                </tr>
+            </tr>
+            <tr>
+                <td>
+                    <font>Rublo Russo (RUB)</font>
+
+                </td>
+
+                <tr>
+                    <td class="tdSecundario">
+                        <font> Cotação atual:</font>
+
+                        <input type="text" id="valorRublo" class="inputCotacoes" readonly="true">
+
+                        <font> Máximo:</font>
+
+                        <input type="text" id="maximoRublo" class="inputCotacoes" readonly="true">
+
+                        <font> Mínimo:</font>
+
+                        <input type="text" id="minimoRublo" class="inputCotacoes" readonly="true">
+
+                        <font>Variação:</font>
+
+                        <input type="text" id="variacaoRublo" class="inputCotacoes" readonly="true">
+                    </td>
+                </tr>
+            </tr>
+            <tr>
+                <td>
+                    <font>Bitcoin (BTC)</font>
+
+                </td>
+
+                <tr>
+                    <td class="tdSecundario">
+                        <font> Cotação atual:</font>
+
+                        <input type="text" id="valorBitcoin" class="inputCotacoes" readonly="true">
+
+                        <font> Máximo:</font>
+
+                        <input type="text" id="maximoBitcoin" class="inputCotacoes" readonly="true">
+
+                        <font> Mínimo:</font>
+
+                        <input type="text" id="minimoBitcoin" class="inputCotacoes" readonly="true">
+
+                        <font> Variação:</font>
+
+                        <input type="text" id="variacaoBitcoin" class="inputCotacoes" readonly="true">
+                    </td>
+                </tr>
+            </tr>
+            <tr>
+                <td>
+                    <font>Libra Esterlina (GBP)</font>
+                </td>
+
+                <tr>
+                    <td class="tdSecundario">
+                        <font>Cotação atual:</font>
+
+                        <input type="text" id="valorLibra" class="inputCotacoes" readonly="true">
+
+                        <font>Máximo:</font>
+
+                        <input type="text" id="maximoLibra" class="inputCotacoes" readonly="true">
+
+                        <font>Mínimo:</font>
+
+                        <input type="text" id="minimoLibra" class="inputCotacoes" readonly="true">
+
+                        <font>Variação:</font>
+
+                        <input type="text" id="variacaoLibra" class="inputCotacoes" readonly="true">
+                    </td>
+                </tr>
+            </tr>
+        </table>
+    </body>
+</html>
+
