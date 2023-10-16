@@ -26,8 +26,16 @@ body{
 }
 
 .dark-mode{
-    background-color: #3b3b3bf2;
+    background-color: #121212;
     color: white;
+}
+
+.inputCotacoesDark{
+    color:white;
+    border:none;
+    background-color: transparent;
+    font-size:1rem;
+    font-style:italic;
 }
 
 i{
@@ -87,7 +95,7 @@ i{
     background-color: transparent;
     font-size:1rem;
     font-style:italic;
-    color: green;
+    color: rgb(3, 192, 3);
 }
 
 .inputCotacoesVariacaoNegativa{
@@ -95,7 +103,15 @@ i{
     background-color: transparent;
     font-size:1rem;
     font-style:italic;
-    color: red;
+    color: rgba(255, 0, 0, 0.849);
+}
+
+.inputCotacoesVariacao{
+    border:none;
+    background-color: transparent;
+    font-size:1rem;
+    font-style:italic;
+    color: rgba(2, 120, 255, 0.849);
 }
 
 
