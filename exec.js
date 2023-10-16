@@ -72,12 +72,30 @@ fetch(`https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL,ARS-BRL,RUB-
     }
     document.getElementById('variacaoLibra').value = dados.GBPBRL.varBid
     if(document.getElementById('variacaoLibra').value != 0 && document.getElementById('variacaoLibra').value > 0){
-        document.getElementById('variacaoLibra').className = 'inputCotecoesVariacaoPositiva'
+        document.getElementById('variacaoLibra').className = 'inputCotacoesVariacaoPositiva'
     }
     else if(document.getElementById('variacaoLibra').value != 0 && document.getElementById('variacaoLibra').value < 0){
         document.getElementById('variacaoLibra').className = 'inputCotacoesVariacaoNegativa'
     }
 
-    
 
 })
+
+//Função altera entre modo light/dark
+
+
+function alteraModo(){
+
+    var elementoBody = document.body
+
+    elementoBody.classList.toggle("dark-mode");
+
+}
+
+// Função para cálculo e conversão
+
+
+function operacaoConversao(){
+    
+}
+

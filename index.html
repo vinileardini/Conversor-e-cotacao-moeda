@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 
 <link rel="stylesheet" href="layout.css">
+<link rel="stylesheet" type="text/css" href="Font Awesome/fontawesome-free-6.4.0-web/css/all.min.css">
 <script type="text/javascript" src="exec.js"></script>
 
 <html>
     <body>
         <table id="tabela_conversor"> 
             <tr>
-                <td id="tituloConversor">
-                    <font>Conversor de moedas</font>
+                <td>
+                    <font id="tituloConversor">Conversor de moedas</font>
+                </td>
+
+                <td>
+                    <button onclick=alteraModo() id="botaoModo"><i class="fa-solid fa-circle-half-stroke" id="selecionaModo"></i></button>
                 </td>
 
                 <tr>
