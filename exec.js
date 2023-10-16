@@ -96,6 +96,48 @@ function alteraModo(){
 
 
 function operacaoConversao(){
+    valorInput1 = document.getElementById('input1').value
+    valorInput2 = document.getElementById('input2').value
+    moedaSelecionada2 = document.getElementById('tipo-moeda2').value
+
+    if(valorInput1 != 0 && valorInput1 > 0){
+        moedaSelecionada = document.getElementById('tipo-moeda1').value 
+
+        if(moedaSelecionada == 0){
+            //Conversão real / real
+            if(moedaSelecionada2 == 0){
+                document.getElementById('input2').value = valorInput1
+            }
+            //Conversão real/dolar
+            else if(moedaSelecionada2 == 1){
+                conversaoRealDolar = valorInput1 * document.getElementById('valorDolar').value
+                document.getElementById('input2').value = conversaoRealDolar
+            }
+            //Conversão real/euro
+            else if(moedaSelecionada2 == 2){
+                conversaoRealEuro = valorInput1 * document.getElementById('valorEuro').value
+                document.getElementById('input2').value = conversaoRealEuro
+            }
+        }
+        else if(moedaSelecionada == 1){
+
+        }
+        else if(moedaSelecionada == 2){
+
+        }
+        else if(moedaSelecionada == 3){
+
+        }
+        else if(moedaSelecionada == 4){
+
+        }
+        else if(moedaSelecionada == 5){
+
+        }
+        else if(moedaSelecionada == 6){
+
+        }
+    }
     
 }
 
