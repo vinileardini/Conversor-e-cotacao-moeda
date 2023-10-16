@@ -43,10 +43,40 @@ fetch(`https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL,ARS-BRL,RUB-
     }
 
     document.getElementById('variacaoEuro').value = dados.EURBRL.varBid
+    if(document.getElementById('variacaoEuro').value != 0 && document.getElementById('variacaoEuro').value > 0){
+        document.getElementById('variacaoEuro').className = 'inputCotacoesVariacaoPositiva'
+    }
+    else if(document.getElementById('variacaoEuro').value != 0 && document.getElementById('variacaoEuro').value < 0){
+        document.getElementById('variacaoEuro').className = 'inputCotacoesVariacaoNegativa'
+    }
     document.getElementById('variacaoPeso').value = dados.ARSBRL.varBid
+    if(document.getElementById('variacaoPeso').value != 0 && document.getElementById('variacaoEuro') > 0){
+        document.getElementById('variacaoPeso').className = 'inputCotacoesVariacaoPositiva'
+    }
+    else if(document.getElementById('variacaoPeso').value != 0 && document.getElementById('variacaoPeso').value < 0){
+        document.getElementById('variacaoPeso').className = 'inputCotacoesVariacaoNegativa'
+    }
     document.getElementById('variacaoRublo').value = dados.RUBBRL.varBid
+    if(document.getElementById('variacaoRublo').value != 0 && document.getElementById('variacaoRublo').value > 0){
+        document.getElementById('variacaoRublo').className = 'inputCotacoesVariacaoPositiva'
+    }
+    else if(document.getElementById('variacaoRublo').value != 0 && document.getElementById('variacaoRublo').value < 0){
+        document.getElementById('variacaoRublo').className = 'inputCotacoesVariacaoNegativa'
+    }
     document.getElementById('variacaoBitcoin').value = dados.BTCBRL.varBid
+    if(document.getElementById('variacaoBitcoin').value != 0 && document.getElementById('variacaoBitcoin').value > 0){
+        document.getElementById('variacaoBitcoin').className = 'inputCotacoesVariacaoPositiva'
+    }
+    else if(document.getElementById('variacaoBitcoin').value != 0 && document.getElementById('variacaoBitcoin').value > 0){
+        document.getElementById('variacaoBitcoin').className = 'inputCotacoesVariacaoNegativa'
+    }
     document.getElementById('variacaoLibra').value = dados.GBPBRL.varBid
+    if(document.getElementById('variacaoLibra').value != 0 && document.getElementById('variacaoLibra').value > 0){
+        document.getElementById('variacaoLibra').className = 'inputCotecoesVariacaoPositiva'
+    }
+    else if(document.getElementById('variacaoLibra').value != 0 && document.getElementById('variacaoLibra').value < 0){
+        document.getElementById('variacaoLibra').className = 'inputCotacoesVariacaoNegativa'
+    }
 
     
 
