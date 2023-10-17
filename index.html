@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 
-<link rel="stylesheet" href="layout.css">
+<link rel="stylesheet" href="css/layout.css">
 <link rel="stylesheet" type="text/css" href="Font Awesome/fontawesome-free-6.4.0-web/css/all.min.css">
-<script type="text/javascript" src="exec.js"></script>
+<link rel="icon" href="https://static.vecteezy.com/system/resources/previews/012/598/212/original/currency-coin-cartoon-png.png">
+<script type="text/javascript" src="js/exec.js"></script>
+<title>Conversor de moedas</title>
 
 <html>
+
+
     <body>
         <table id="tabela_conversor"> 
             <tr>
@@ -21,8 +25,8 @@
     
                         <!--Lista de moedas 1-->
     
-                        <input  id="input1" type="number" placeholder="0.00" onchange=operacaoConversao()>
-                        <select name="tipoMoeda1" id="tipo_moeda1">
+                        <input  id="input1" type="number" placeholder="0.00" onchange=operacaoConversao() onclick=retornaPadrao() class='inputConversorPadrao'>
+                        <select name="tipoMoeda1" id="tipo_moeda1" class="dropdownConversor">
                             <option value=0>Reais (R$)</option>
                             <option value=1>Dólares (USD)</option>
                             <option value=2>Euros (EUR)</option>
@@ -33,8 +37,8 @@
                         </select>
     
                         <!--Lista de moedas 2-->
-                        <input id="input2" type="number" placeholder="0.00">
-                        <select name="tipoMoeda2" id="tipo_moeda2" onchange=alteraMoeda()>
+                        <input id="input2" type="number" placeholder="0.00" readonly="true" onclick=verificaClick() class="inputConversorPadrao">
+                        <select name="tipoMoeda2" id="tipo_moeda2" onchange=alteraMoeda() class="dropdownConversor">
                             <option value=0>Reais (R$)</option>
                             <option value=1>Dólares (USD)</option>
                             <option value=2>Euros (EUR)</option>
@@ -55,17 +59,19 @@
         <br>
         <br>
 
+        <hr>
+
         <table id="tabela_cotacao">
 
             <tr>
                 <td id="tituloCotacao">
-                    <font>Cotação das moedas</font>
+                    <font class="titulos">Cotação das moedas</font> 
                 </td>
             </tr>
 
             <tr>
                 <td>
-                    <font>Dólar Americano(USD) </font>
+                    <font class="tituloMoeda">Dólar Americano (USD) </font>
                 </td>
                 <tr>
                     <td class="tdSecundario">
@@ -90,7 +96,7 @@
                 </tr>
             </tr>
                 <td>
-                    <font>Euro (EUR)</font>
+                    <font class="tituloMoeda">Euro (EUR)</font>
                 </td>
 
                 <tr>
@@ -117,7 +123,7 @@
             </tr>
             <tr>
                 <td>
-                    <font>Peso argentino (ARS)</font>
+                    <font class="tituloMoeda">Peso argentino (ARS)</font>
                 </td>
 
                 <tr>
@@ -143,7 +149,7 @@
             </tr>
             <tr>
                 <td>
-                    <font>Rublo Russo (RUB)</font>
+                    <font class="tituloMoeda">Rublo Russo (RUB)</font>
 
                 </td>
 
@@ -169,7 +175,7 @@
             </tr>
             <tr>
                 <td>
-                    <font>Bitcoin (BTC)</font>
+                    <font class="tituloMoeda">Bitcoin (BTC)</font>
 
                 </td>
 
@@ -195,7 +201,7 @@
             </tr>
             <tr>
                 <td>
-                    <font>Libra Esterlina (GBP)</font>
+                    <font class="tituloMoeda">Libra Esterlina (GBP)</font>
                 </td>
 
                 <tr>

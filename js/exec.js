@@ -54,7 +54,7 @@
         document.getElementById('variacaoEuro').className = 'inputCotacoesVariacaoNegativa'
     }
     else{
-        document.getElementById('varicaoEuro').className = 'inputCotacoesVariacao'
+        document.getElementById('variacaoEuro').className = 'inputCotacoesVariacao'
     }
 
     document.getElementById('variacaoPeso').value = dados.ARSBRL.varBid
@@ -83,7 +83,7 @@
     if(document.getElementById('variacaoBitcoin').value != 0 && document.getElementById('variacaoBitcoin').value > 0){
         document.getElementById('variacaoBitcoin').className = 'inputCotacoesVariacaoPositiva'
     }
-    else if(document.getElementById('variacaoBitcoin').value != 0 && document.getElementById('variacaoBitcoin').value > 0){
+    else if(document.getElementById('variacaoBitcoin').value != 0 && document.getElementById('variacaoBitcoin').value < 0){
         document.getElementById('variacaoBitcoin').className = 'inputCotacoesVariacaoNegativa'
     }
     else{
@@ -113,11 +113,23 @@ function alteraModo(){
 
     inputs = document.querySelectorAll(".inputCotacoes");
 
+    select = document.querySelectorAll(".dropdownConversor")
+
+    tituloMoeda = document.querySelectorAll(".tituloMoeda")
+
     elementoBody.classList.toggle("dark-mode");
 
     inputs.forEach(input => {
         input.classList.toggle('inputCotacoesDark')
     });
+
+    select.forEach(selects =>{
+        selects.classList.toggle('dropdownConversorDark')
+    })
+
+    tituloMoeda.forEach(titulo =>{
+        titulo.classList.toggle('tituloMoedaDark')
+    })
 
 }
 
@@ -216,7 +228,7 @@ function operacaoConversao(){
 
             //Conversao euro/real
             if(moedaSelecionada2.value == 0){
-                conversaoEuroReal = valorInput1 * document.getElementById('valorEuro')
+                conversaoEuroReal = valorInput1 * document.getElementById('valorEuro').value
                 document.getElementById('input2').value = conversaoEuroReal
             }
             //Conversao euro/dolar
@@ -225,19 +237,204 @@ function operacaoConversao(){
                 calculoEuroDolar = valorInput1 * conversaoEuroDolar
                 document.getElementById('input2').value = calculoEuroDolar
             }
+            //Conversao euro/euro
+            else if(moedaSelecionada2.value == 2){
+                document.getElementById('input2').value = valorInput1
+            }
+            //Conversao euro/peso
+            else if(moedaSelecionada2.value == 3){
+                conversaoEuroPeso = document.getElementById('valorEuro').value / document.getElementById('valorPeso').value
+                calculoEuroPeso = valorInput1 * conversaoEuroPeso
+                document.getElementById('input2').value = calculoEuroPeso
+            }
+            //Conversao euro/rublo
+            else if(moedaSelecionada2.value == 4){
+                conversaoEuroRublo = document.getElementById('valorEuro').value / document.getElementById('valorRublo').value
+                calculoEuroRublo = valorInput1 * conversaoEuroRublo
+                document.getElementById('input2').value = calculoEuroRublo
+            }
+            //Conversao euro/bitcoin
+            else if(moedaSelecionada2.value == 5){
+                conversaoEuroBit = document.getElementById('valorEuro').value / document.getElementById('valorBitcoin').value
+                calculoEuroBit = valorInput1 * conversaoEuroBit
+                document.getElementById('input2').value = calculoEuroBit
+            }
+            //Conversao euro/libra
+            else if(moedaSelecionada2.value == 6){
+                conversaoEuroLibra = document.getElementById('valorEuro').value / document.getElementById('valorLibra').value
+                calculoEuroLibra = valorInput1 * conversaoEuroLibra
+                document.getElementById('input2').value = calculoEuroLibra
+            }
+
 
         }
         else if(moedaSelecionada.value == 3){
+            //Conversao peso/real
+            if(moedaSelecionada2.value == 0){
+                conversaoPesoReal = valorInput1 * document.getElementById('valorPeso').value
+                document.getElementById('input2').value = conversaoPesoReal
+            }
+            //Conversao peso/dolar
+            else if(moedaSelecionada2.value == 1){
+                conversaoPesoDolar = document.getElementById('valorPeso').value / document.getElementById('valorDolar').value
+                calculoPesoDolar = valorInput1 * conversaoPesoDolar
+                document.getElementById('input2').value = calculoPesoDolar
+            }
+            //Conversao peso/euro
+            else if(moedaSelecionada2.value == 2){
+                conversaoPesoEuro = document.getElementById('valorPeso').value / document.getElementById('valorPeso').value
+                calculoPesoEuro = valorInput1 * conversaoPesoEuro
+                document.getElementById('input2').value = calculoPesoEuro
+            }
+            //Conversao peso/peso
+            else if(moedaSelecionada2.value == 3){
+                document.getElementById('input2').value = valorInput1
+            }
+            //Conversao peso/rublo
+            else if(moedaSelecionada2.value == 4){
+                conversaoPesoRublo = document.getElementById('valorPeso').value / document.getElementById('valorRublo').value
+                calculoPesoRublo = valorInput1 * conversaoPesoRublo
+                document.getElementById('input2').value = calculoPesoRublo
+            }
+            //Conversao peso/bitcoin
+            else if(moedaSelecionada2.value == 5){
+                conversaoPesoBit = document.getElementById('valorPeso').value / document.getElementById('valorBitcoin').value
+                calculoPesoBit = valorInput1 * conversaoPesoBit
+                document.getElementById('input2').value = calculoPesoBit
+            }
+            //Conversao peso/libra
+            else if(moedaSelecionada2.value == 6){
+                conversaoPesoLibra = document.getElementById('valorPeso').value / document.getElementById('valorLibra').value
+                calculoPesoLibra = valorInput1 * conversaoPesoLibra
+                document.getElementById('input2').value = calculoPesoLibra
+            }
 
         }
         else if(moedaSelecionada.value == 4){
 
+            //Conversao rublo/real
+            if(moedaSelecionada2.value == 0){
+                conversaoRubloReal = valorInput1 * document.getElementById('valorRublo').value
+                document.getElementById('input2').value = conversaoRubloReal
+            }
+            //Conversao rublo/dolar
+            else if(moedaSelecionada2.value == 1){
+                conversaoRubloDolar = document.getElementById('valorRublo').value / document.getElementById('valorDolar').value
+                calculoRubloDolar = valorInput1 * conversaoRubloDolar
+                document.getElementById('input2').value = calculoRubloDolar
+            }
+            //Conversao rublo/euro
+            else if(moedaSelecionada2.value == 2){
+                conversaoRubloEuro = document.getElementById('valorRublo').value / document.getElementById('valorEuro').value
+                calculoRubloEuro = valorInput1 * conversaoRubloEuro
+                document.getElementById('input2').value = calculoRubloEuro
+            }
+            //Conversao rublo/peso
+            else if(moedaSelecionada2.value == 3){
+                conversaoRubloPeso = document.getElementById('valorRublo').value / document.getElementById('valorPeso').value
+                calculoRubloPeso = valorInput1 * conversaoRubloPeso
+                document.getElementById('input2').value = calculoRubloPeso
+            }
+            //Conversao rublo/rublo
+            else if(moedaSelecionada2.value == 4){
+                document.getElementById('input2').value = valorInput1
+            }
+            //Conversao rublo/bitcoin
+            else if(moedaSelecionada2.value == 5){
+                conversaoRubloBit = document.getElementById('valorRublo').value / document.getElementById('valorBitcoin').value
+                calculoRubloBit = valorInput1 * conversaoRubloBit
+                document.getElementById('input2').value = calculoRubloBit
+            }
+            //Conversao rublo/libra
+            else if(moedaSelecionada2.value == 6){
+                conversaoRubloLibra = document.getElementById('valorRublo').value / document.getElementById('valorLibra').value
+                calculoRubloLibra = valorInput1 * conversaoRubloLibra
+                document.getElementById('input2').value = calculoRubloLibra
+            }
+
         }
         else if(moedaSelecionada.value == 5){
+            //Conversao bitcoin/real
+            if(moedaSelecionada2.value == 0){
+                conversaoBitcoinReal = valorInput1 * document.getElementById('valorBitcoin').value
+                document.getElementById('input2').value = conversaoBitcoinReal
+            }
+            //Conversao bitcoin/dolar
+            else if(moedaSelecionada2.value == 1){
+                conversaoBitcoinDolar = document.getElementById('valorBitcoin').value / document.getElementById('valorDolar').value
+                calculoBitcoinDolar = valorInput1 * conversaoBitcoinDolar
+                document.getElementById('input2').value = calculoBitcoinDolar
+            }
+            //Conversao bitcoin/euro
+            else if(moedaSelecionada2.value == 2){
+                conversaoBitcoinEuro =  document.getElementById('valorBitcoin').value / document.getElementById('valorEuro').value
+                calculoBitcoinEuro = valorInput1 * conversaoBitcoinEuro
+                document.getElementById('input2').value = calculoBitcoinEuro
+            }
+            //Conversao bitcoin/peso
+            else if(moedaSelecionada2.value == 3){
+                conversaoBitcoinPeso = document.getElementById('valorBitcoin').value / document.getElementById('valorPeso').value
+                calculoBitcoinPeso = valorInput1 * conversaoBitcoinPeso
+                document.getElementById('input2').value = calculoBitcoinPeso
+            }
+            //Conversao bitcoin/rublo
+            else if(moedaSelecionada2.value == 4){
+                conversaoBitcoinRublo = document.getElementById('valorBitcoin').value / document.getElementById('valorRublo').value
+                calculoBitcoinRublo = valorInput1 * conversaoBitcoinRublo
+                document.getElementById('input2').value = calculoBitcoinRublo
+            }
+            //Conversao bitcoin/bitcoin
+            else if(moedaSelecionada2.value == 5){
+                document.getElementById('input2').value = valorInput1
+            }
+            //Conversao bitcoin/libra
+            else if(moedaSelecionada2.value == 6){
+                conversaoBitcoinLibra = document.getElementById('valorBitcoin').value / document.getElementById('valorLibra').value
+                calculoBitcoinLibra = valorInput1 * conversaoBitcoinLibra
+                document.getElementById('input2').value = calculoBitcoinLibra
+            }
 
         }
         else if(moedaSelecionada.value == 6){
-
+            //Conversao libra/real
+            if(moedaSelecionada2.value == 0){
+                conversaoLibraReal = valorInput1 * document.getElementById('valorLibra').value
+                document.getElementById('input2').value = conversaoLibraReal
+            }
+            //Conversao libra/dolar
+            else if(moedaSelecionada2.value == 1){
+                conversaoLibraDolar = document.getElementById('valorLibra').value / document.getElementById('valorDolar').value
+                calculoLibraDolar = valorInput1 * conversaoLibraDolar
+                document.getElementById('input2').value = calculoLibraDolar
+            }
+            //Conversao libra/euro
+            else if(moedaSelecionada2.value == 2){
+                conversaoLibraEuro = document.getElementById('valorLibra').value / document.getElementById('valorEuro').value
+                calculoLibraEuro = valorInput1 * conversaoLibraEuro
+                document.getElementById('input2').value = calculoLibraEuro
+            }
+            //Conversao libra/peso
+            else if(moedaSelecionada2.value == 3){
+                conversaoLibraPeso = document.getElementById('valorLibra').value / document.getElementById('valorPeso').value
+                calculoLibraPeso = valorInput1 * conversaoLibraPeso
+                document.getElementById('input2').value = calculoLibraPeso
+            }
+            //Conversao libra/rublo
+            else if(moedaSelecionada2.value == 4){
+                conversaoLibraRublo = document.getElementById('valorLibra').value / document.getElementById('valorRublo').value
+                calculoLibraRublo = valorInput1 * conversaoLibraRublo
+                document.getElementById('input2').value = calculoLibraRublo
+            }
+            //Conversao libra/bitcoin
+            else if(moedaSelecionada2.value == 5){
+                conversaoLibraBit = document.getElementById('valorLibra').value / document.getElementById('valorBitcoin').value
+                calculoLibraBit = valorInput1 * conversaoLibraBit
+                document.getElementById('input2').value = calculoLibraBit
+            }
+            //Conversao libra/libra
+            else if(moedaSelecionada2.value == 6){
+                document.getElementById('input2').value = valorInput1
+            }
         }
     }
     else{
@@ -283,3 +480,14 @@ function alteraMoeda(){
 
 }
 
+//Função verifica click no resultado da conversão
+
+function verificaClick(){
+    alert('O valor deve ser colocado no primeiro campo')
+    document.getElementById('input1').className = 'inputConversor'
+}
+
+//Função retorna input valor conversor a coloração normal
+function retornaPadrao(){
+    document.getElementById('input1').className = 'inputConversorPadrao'
+}
