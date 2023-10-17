@@ -135,7 +135,6 @@ function alteraModo(){
 
 // Função para cálculo e conversão
 
-
 function operacaoConversao(){
     valorInput1 = document.getElementById('input1').value
     valorInput2 = document.getElementById('input2').value
@@ -490,4 +489,66 @@ function verificaClick(){
 //Função retorna input valor conversor a coloração normal
 function retornaPadrao(){
     document.getElementById('input1').className = 'inputConversorPadrao'
+}
+
+//Função alteração de moeda com valor já setado no 1° campo
+
+function verificaAlteracaoMoeda(){
+    valorMoeda1 = document.getElementById('input1').value
+    valorMoeda2 = document.getElementById('input2').value
+
+    if(valorMoeda1 != 0){
+        tipoMoeda1 = document.getElementById('tipo_moeda1')
+        tipoMoeda2 = document.getElementById('tipo_moeda2')
+
+        if(tipoMoeda1.value == 0){
+            if(tipoMoeda2.value == 0){
+                valorMoeda2 = valorMoeda1
+                document.getElementById('input2').value = valorMoeda2
+            }
+            else if(tipoMoeda2.value == 1){
+                valorMoeda2 = document.getElementById('valorDolar').value * valorMoeda1
+                document.getElementById('input2').value = valorMoeda2
+            }
+            else if(tipoMoeda2.value == 2){
+                valorMoeda2 = document.getElementById('valorEuro').value * valorMoeda1
+                document.getElementById('input2').value = valorMoeda2
+            }
+            else if(tipoMoeda2.value == 3){
+                valorMoeda2 = document.getElementById('valorPeso').value * valorMoeda1
+                document.getElementById('input2').value = valorMoeda2
+            }
+            else if(tipoMoeda2.value == 4){
+                valorMoeda2 = document.getElementById('valorRublo').value * valorMoeda1
+                document.getElementById('input2').value = valorMoeda2
+            }
+            else if(tipoMoeda2.value == 5){
+                valorMoeda2 = document.getElementById('valorBitcoin').value * valorMoeda1
+                document.getElementById('input2').value = valorMoeda2
+            }
+            else if(tipoMoeda2.value == 6){
+                valorMoeda2 = document.getElementById('valorLibra').value * valorMoeda1
+                document.getElementById('input2').value = valorMoeda2
+            }
+
+        }
+
+        else if(tipoMoeda1.value == 1){
+            if(tipoMoeda2 == 0){
+                valorMoeda2 = document.getElementById('valorDolar').value * valorMoeda1
+                document.getElementById('input2').value = valorMoeda2
+            }
+            else if(tipoMoeda2.value == 1){
+                valorMoeda2 = valorMoeda1
+                document.getElementById('input2').value = valorMoeda2
+            }
+            else if(tipoMoeda2.value == 2){
+                 valorMoeda2 = (document.getElementById('valorDolar').value / document.getElementById('valorEuro').value) * valorMoeda1
+                 document.getElementById('input2').value = valorMoeda2
+            }
+        }
+
+        
+    
+    }
 }
