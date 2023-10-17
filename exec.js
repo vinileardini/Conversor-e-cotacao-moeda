@@ -1,8 +1,8 @@
 //Requisição api para as cotações
 
-fetch(`https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL,ARS-BRL,RUB-BRL,BTC-BRL,GBP-BRL`).then(response=>{
-    return response.json()
-}).then(dados =>{
+    fetch(`https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL,ARS-BRL,RUB-BRL,BTC-BRL,GBP-BRL`).then(response=>{        
+        return response.json()
+    }).then(dados =>{
 
     //Insere o valor da cotação atual em seu devido campo
 
@@ -30,6 +30,7 @@ fetch(`https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL,ARS-BRL,RUB-
     document.getElementById('minimoRublo').value = dados.RUBBRL.low
     document.getElementById('minimoBitcoin').value = dados.BTCBRL.low
     document.getElementById('minimoLibra').value = dados.GBPBRL.low
+    
 
     //Insere o valor de variação em seu devido campo
 
@@ -128,7 +129,7 @@ function operacaoConversao(){
     valorInput2 = document.getElementById('input2').value
     moedaSelecionada2 = document.getElementById('tipo_moeda2')
 
-    if(valorInput1 != 0 && valorInput1 > 0){
+    if(valorInput1 != 0 && valorInput1 >= 0){
         moedaSelecionada = document.getElementById('tipo_moeda1')
 
         if(moedaSelecionada.value == 0){
@@ -169,8 +170,61 @@ function operacaoConversao(){
         }
         else if(moedaSelecionada.value == 1){
 
+            //Conversao dolar/real
+            if(moedaSelecionada2.value == 0){
+                conversaoDolarReal = valorInput1 * document.getElementById('valorDolar').value
+                document.getElementById('input2').value = conversaoDolarReal
+            }
+            //Conversao dolar/dolar
+            else if(moedaSelecionada2.value == 1){
+                document.getElementById('input2').value = valorInput1
+            }
+            //Conversao dolar/euro
+            else if(moedaSelecionada2.value == 2){
+                conversaoDolarEuro = document.getElementById('valorDolar').value/document.getElementById('valorEuro').value
+                calculoConversaoDolarEuro = valorInput1 * conversaoDolarEuro
+                document.getElementById('input2').value = calculoConversaoDolarEuro
+            }
+            //Conversao dolar/peso
+            else if(moedaSelecionada2.value == 3){
+                conversaoDolarPeso = document.getElementById('valorDolar').value / document.getElementById('valorPeso').value
+                calculoConversaoDolarPeso = valorInput1 * conversaoDolarPeso
+                document.getElementById('input2').value = calculoConversaoDolarPeso
+            }
+            //Conversao dolar/rublo
+            else if(moedaSelecionada2.value == 4){
+                conversaoDolarRublo = document.getElementById('valorDolar').value / document.getElementById('valorRublo').value
+                calculoDolarRublo = valorInput1 * conversaoDolarRublo
+                document.getElementById('input2').value = calculoDolarRublo
+            }
+            //Conversao dolar/bitcoin
+            else if(moedaSelecionada2.value == 5){
+                conversaoDolarBitcoin = document.getElementById('valorDolar').value / document.getElementById('valorBitcoin').value
+                calculoDolarBitcoin = valorInput1 * conversaoDolarBitcoin
+                document.getElementById('input2').value = calculoDolarBitcoin
+            }
+            //Conversao dolar/libra
+            else if(moedaSelecionada2.value == 6){
+                conversaoDolarLibra = document.getElementById('valorDolar').value / document.getElementById('valorLibra').value
+                calculoDolarLibra = valorInput1 * conversaoDolarLibra
+                document.getElementById('input2').value = calculoDolarLibra
+            }
+            
+
         }
         else if(moedaSelecionada.value == 2){
+
+            //Conversao euro/real
+            if(moedaSelecionada2.value == 0){
+                conversaoEuroReal = valorInput1 * document.getElementById('valorEuro')
+                document.getElementById('input2').value = conversaoEuroReal
+            }
+            //Conversao euro/dolar
+            else if(moedaSelecionada2.value == 1){
+                conversaoEuroDolar = document.getElementById('valorEuro').value / document.getElementById('valorDolar').value
+                calculoEuroDolar = valorInput1 * conversaoEuroDolar
+                document.getElementById('input2').value = calculoEuroDolar
+            }
 
         }
         else if(moedaSelecionada.value == 3){
@@ -186,12 +240,46 @@ function operacaoConversao(){
 
         }
     }
+    else{
+        alert('Insira um valor válido')
+    }
     
 }
 
 // Função alteração tipo moeda
 
 function alteraMoeda(){
+
+    tipoMoedaAlterado = document.getElementById('tipo_moeda2').value
+
+    if(tipoMoedaAlterado == 0){
+        conversao = document.getElementById('input1').value
+        document.getElementById('input2').value = conversao
+    }
+    else if(tipoMoedaAlterado == 1){
+        conversao1 = document.getElementById('input1').value * document.getElementById('valorDolar').value
+        document.getElementById('input2').value = conversao1
+    }
+    else if(tipoMoedaAlterado == 2){
+        conversao2 = document.getElementById('input1').value * document.getElementById('valorEuro').value
+        document.getElementById('input2').value = conversao2
+    }
+    else if(tipoMoedaAlterado == 3){
+        conversao3 = document.getElementById('input1').value * document.getElementById('valorPeso').value
+        document.getElementById('input2').value = conversao3
+    }
+    else if(tipoMoedaAlterado == 4){
+        conversao4 = document.getElementById('input1').value * document.getElementById('valorRublo').value
+        document.getElementById('input2').value = conversao4
+    }
+    else if(tipoMoedaAlterado == 5){
+        conversao5 = document.getElementById('input1').value * document.getElementById('valorBitcoin').value
+        document.getElementById('input2').value = conversao5
+    }
+    else if(tipoMoedaAlterado == 6){
+        conversao6 = document.getElementById('input1').value * document.getElementById('valorLibra').value
+        document.getElementById('input2').value = conversao6
+    }
 
 }
 
