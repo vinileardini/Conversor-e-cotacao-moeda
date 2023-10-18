@@ -19,3 +19,12 @@ As moedas disponíveis para uso no conversor e verificação de cotação são:
 .Bitcoin
 
 .Libra Esterlina
+#
+# Página em funcionamento light mode
+
+![image](https://github.com/vinileardini/Conversor-e-cotacao-moeda/assets/87077133/b29179de-b011-4c96-80d7-5c858053dcf2)
+#
+# Página em funcionamento dark mode
+
+![image](https://github.com/vinileardini/Conversor-e-cotacao-moeda/assets/87077133/c528729f-db9e-4013-8b0e-22c1780d1991)
+
